@@ -21,12 +21,12 @@ jobs:
         uses: actions/checkout@v2
       - name: Building docker image
         run: |
-          docker build --rm=true --force-rm=true -t nsfilho/esp8266-rtos-sdk:3.3 ./
+          docker build --rm=true --force-rm=true -t airmeter-io/esp8266-rtos-sdk:3.4 ./
       - name: Push to Docker Hub
         uses: docker/build-push-action@v1
         with:
           username: ${{ secrets.DOCKER_STORE_USERNAME }}
           password: ${{ secrets.DOCKER_STORE_PASSWORD }}
-          repository: nsfilho/esp8266-rtos-sdk
-          tags: 3.3
+          repository: airmeter-io/esp8266-rtos-sdk
+          tags: 3.4
           tag_with_ref: false
