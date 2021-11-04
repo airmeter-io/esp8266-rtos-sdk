@@ -10,6 +10,6 @@ inputs:
     default: "defconfig all size-components"
 runs:
   using: "docker"
-  image: "docker://nsfilho/esp8266-rtos-sdk:3.4"
+  image: "docker://airmeter.io/esp8266-rtos-sdk:3.4"
   args:
     - ${{ inputs.makearg }}
