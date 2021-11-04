@@ -25,7 +25,7 @@ LABEL AUTHOR_EMAIL "nsfilho@icloud.com"
 
 # Prepare environment variables
 ENV SDK_URL=https://github.com/espressif/ESP8266_RTOS_SDK.git
-ENV XTENSA_URL=https://dl.espressif.com/dl/xtensa-lx106-elf-linux64-1.22.0-100-ge567ec7-5.2.0.tar.gz
+ENV XTENSA_URL=https://dl.espressif.com/dl/xtensa-lx106-elf-gcc8_4_0-esp-2020r3-linux-amd64.tar.gz
 ENV IDF_PATH=/esp/sdk
 ENV PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/esp/sdk/components/esptool_py/esptool:/esp/sdk/components/partition_table:/esp/sdk/tools:/esp/xtensa-lx106-elf/bin
 
@@ -44,7 +44,7 @@ RUN apt-get update && apt-get install -y \
 
 # Download SDK & Install python requirements
 RUN mkdir /esp /esp/sdk && \
-    git clone -b release/v3.3 --recursive ${SDK_URL} /esp/sdk && \
+    git clone -b release/v3.4 --recursive ${SDK_URL} /esp/sdk && \
     cd /esp/sdk && \
     pip install -r requirements.txt
 
